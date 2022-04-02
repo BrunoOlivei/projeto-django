@@ -25,7 +25,7 @@ class UsuarioManager(BaseUserManager):
 
     def create_superuser(self, email, password):
         usuario = self.create_user(
-            email=self.normalize_email(),
+            email=self.normalize_email(email),
             password=password,
         )
         usuario.is_active = True
