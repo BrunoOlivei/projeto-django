@@ -3,4 +3,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+
+    context = {
+        "nome_pagina": "Início da dashboard",
+    }
+    return render(request, "index.html", context)
